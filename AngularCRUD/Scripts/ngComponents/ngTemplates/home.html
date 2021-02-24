@@ -1,0 +1,20 @@
+﻿<h2>Contact List</h2>
+<hr/>
+<table class="table table-responsive">
+    <tr>
+        <th>Contact Name</th>
+        <th>Contact No</th>
+        <th>Email</th>
+        <th>Address</th>
+        <th></th>
+        <th></th>
+    </tr>
+    <tr ng-repeat="contact in contacts">
+        <td ng-bind="contact.ContactName"></td>
+        <td ng-bind="contact.ContactNo"></td>
+        <td ng-bind="contact.EmailID"></td>
+        <td ng-bind="contact.Address"></td>
+        <td><a href="#/savecontact/{{contact.ContactID}}">Edit</a></td>
+        <td><a target="_self" ng-click="DeleteContact(contact.ContactID)">Delete</a></td>
+    </tr>
+</table>

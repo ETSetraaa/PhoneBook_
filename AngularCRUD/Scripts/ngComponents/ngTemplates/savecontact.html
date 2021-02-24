@@ -1,0 +1,31 @@
+﻿<h2>Save contact</h2>
+<hr />
+<form novalidate role="form" name="contactForm" ng-submit="Submit()">
+    <div class="form-group">
+        <label for="ContactName">Contact Name: </label>
+        <input type="text" name="ContactName" ng-model="Contact.ContactName" ng-class="IsFormSubmitted ? 'ng-dirty' : ''"
+               class="form-control" required />
+        <span class="error"
+              ng-show="(contactForm.ContactName.$dirty || IsFormSubmitted) && contactForm.ContactName.$error.required">Contact Name required.</span>
+    </div>
+    <div class="form-group">
+        <label for="ContactNo">Contact No: </label>
+        <input type="text" name="ContactNo" ng-model="Contact.ContactNo" ng-class="IsFormSubmitted ? 'ng-dirty' : ''"
+               class="form-control" required />
+        <span class="error"
+              ng-show="(contactForm.ContactNo.$dirty || IsFormSubmitted) && contactForm.ContactNo.$error.required">Contact No required.</span>
+    </div>
+    <div class="form-group">
+        <label for="EmailID">Email ID: </label>
+        <input type="email" name="EmailID" ng-model="Contact.EmailID" ng-class="IsFormSubmitted ? 'ng-dirty' : ''"
+               class="form-control"  />
+        <span class="error"
+              ng-show="(contactForm.EmailID.$dirty || IsFormSubmitted) && contactForm.EmailID.$error.email">Invalid email.</span>        
+    </div>
+    <div class="form-group">
+        <label for="Address">Address: </label>
+        <textarea name="Address" ng-model="Contact.Address" class="form-control"></textarea>
+    </div>
+    <input type="submit" class="btn btn-default" />
+
+</form>
